@@ -1,12 +1,9 @@
 require 'rubygems'
-require 'rio'
-require 'rdiscount'
-
 class Md
-
-  attr_accessor :markdown_text, :html_text, :markdown_file_path, :html_file_path
+  attr_accessor :markdown_text, :html_text, :markdown_file_path, :html_file_path, :success
 
   def initialize(options={})
+    @success = false
     @markdown_text = ''
     @markdown_file_path = options[:markdown_file_path]
     return false unless File.exist? @markdown_file_path
@@ -36,6 +33,11 @@ class Md
 
   def create_html_file
     rio(@html_file_path) < @html_text
+    @success = true
+  end
+
+  def success?
+    @success
   end
 
 end
