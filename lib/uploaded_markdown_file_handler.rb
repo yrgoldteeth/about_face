@@ -1,13 +1,11 @@
 class UploadedMarkdownFileHandler
-  attr_accessor :markdown_file_path, :markdown_file_data, :success, :converted_file_path, :return_method_type, :public_dir
+  attr_accessor :markdown_file_path, :markdown_file_data, :converted_file_path, :converted_file_data, :public_dir
 
   STORAGE_PATH = 'public/af'
 
   def initialize(options={})
     @success = false
     return unless options[:markdown_file]
-
-    @return_method_type = options[:return_method_type] || :text
 
     uploaded_markdown_file = options[:markdown_file]
     file_name = uploaded_markdown_file[:filename]
@@ -22,7 +20,7 @@ class UploadedMarkdownFileHandler
 
     return unless File.directory? new_directory_path
 
-    @public_dir = File.join('ar', dir_num)
+    @public_dir = File.join('af', dir_num)
 
     @markdown_file_path = File.join(new_directory_path, file_name)
   end
@@ -43,12 +41,7 @@ class UploadedMarkdownFileHandler
       @success = true
       html_file = File.basename(m.html_file_path)
       @converted_file_path = File.join(@public_dir, html_file)
-    end
-  end
-
-  def return_method
-    case @return_method_type
-    when :text
+      @converted_file_data = m.html_text
     end
   end
 
