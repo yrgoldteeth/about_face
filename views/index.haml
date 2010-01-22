@@ -1,0 +1,5 @@
+#upload-form.span-20.prepend-6.last
+  %form{:method => 'post', :action => '/', :enctype => 'multipart/form-data'}
+    Upload Markdown File:
+    %input{:type => 'file', :name => 'markdown_file'}
+    %input{:type => 'submit', :value => 'Convert'}
