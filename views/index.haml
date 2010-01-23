@@ -1,5 +1,17 @@
-#upload-form.span-20.prepend-6.last
-  %form{:method => 'post', :action => '/', :enctype => 'multipart/form-data'}
-    Upload Markdown File:
-    %input{:type => 'file', :name => 'markdown_file'}
-    %input{:type => 'submit', :value => 'Convert'}
+#upload-form.span-12.prepend-6.last
+  %fieldset
+    %legend
+      Upload Markdown File
+    %form{:method => 'post', :action => '/', :enctype => 'multipart/form-data'}
+      %p
+        %input{:type => 'file', :name => 'markdown_file', :class => 'text'}
+      %p
+        %input{:type => 'hidden', :name => 'response_type', :value => 'md'}
+      %p
+        %input{:type => 'submit', :value => 'Convert', :class => 'button'}
+
+#output.span-18.prepend-3.last
+  %fieldset
+    %p
+      :markdown
+        #{@output}
