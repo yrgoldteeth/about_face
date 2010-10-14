@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{about_face}
-  s.version = "0.0.0"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Nicholas Fine"]
@@ -19,8 +19,22 @@ Gem::Specification.new do |s|
      "README.rdoc"
   ]
   s.files = [
-    ".gitignore",
-     "VERSION"
+    ".bundle/config",
+     ".document",
+     ".gitignore",
+     "Gemfile",
+     "Gemfile.lock",
+     "LICENSE",
+     "README.rdoc",
+     "Rakefile",
+     "VERSION",
+     "about_face.gemspec",
+     "bin/about_face",
+     "lib/about_face.rb",
+     "lib/about_face/config.ru",
+     "pkg/about_face-0.0.0.gem",
+     "test/helper.rb",
+     "test/test_about_face.rb"
   ]
   s.homepage = %q{http://github.com/yrgoldteeth/about_face}
   s.rdoc_options = ["--charset=UTF-8"]
