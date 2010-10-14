@@ -1,3 +1,4 @@
 *.swp
 *.mkd
 public/af/*
+.rvmrc
